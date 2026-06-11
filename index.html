@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código Agenda - Agendamiento Belleza</title>
+    <link rel="stylesheet" href="estilos.css">
+    <meta name="description" content="Agenda citas manicure, estilista, colorista">
+</head>
+<body>
+    <header role="banner">
+        <img src="https://www.design.com/es-es/compartir/2935e6c2-2e63-4d3e-a97e-f5706dacdf4d" alt="Logo Cambia Il Tuo Stile">
+        <input type="search" placeholder="Buscar citas..." aria-label="Buscar citas">
+        <button onclick="nuevaCita()" aria-label="Nueva cita">+ Nueva Cita</button>
+    </header>
+    
+    <nav role="navigation" aria-label="Menú principal">
+        <a href="#inicio" class="nav-active">Inicio</a>
+        <a href="#agendar">Agendar</a>
+        <a href="#reservaciones">Reservaciones</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#perfil">Perfil</a>
+    </nav>
+
+    <main id="dashboard" role="main">
+        <h1>Agenda del Día</h1>
+        <div class="filtros">
+            <select aria-label="Filtrar servicio">
+                <option>Todos</option>
+                <option>Manicure</option>
+                <option>Estilista</option>
+                <option>Colorista</option>
+            </select>
+            <button>Hoy</button>
+            <button>Semana</button>
+            <button>Mes</button>
+        </div>
+        
+       <div class="cita-grid" role="grid" aria-label="Lista de citas">
+            <article class="cita manicure" tabindex="0">
+                <div class="cita-header">
+                    <span class="servicio-ico">💅</span>
+                    <strong>Manicure Tradicional</strong>
+                    <span class="hora">08:00 - 09:00</span>
+                </div>
+                <div class="cita-detalles">
+                    <span>Juliana Jiménez</span>
+                    <span>Empleado: Camila Torres</span>
+                </div>
+                <div class="cita-actions">
+                    <button class="btn-editar" aria-label="Editar manicure Ana">Editar</button>
+                    <button class="btn-eliminar" aria-label="Cancelar manicure">Cancelar</button>
+                </div>
+            </article>
+            
+            <article class="cita estilista" tabindex="0">
+                <div class="cita-header">
+                    <span class="servicio-ico">✂️</span>
+                    <strong>Corte Estilista</strong>
+                    <span class="hora">10:30 - 11:20</span>
+                </div>
+                <div class="cita-detalles">
+                    <span>Miguel León</span>
+                    <span>Empleado: Jorge Lozano</span>
+                </div>
+                <div class="cita-actions">
+                    <button class="btn-editar">Editar</button>
+                    <button class="btn-eliminar">Cancelar</button>
+                </div>
+            </article>
+
+            <article class="cita colorista" tabindex="0">
+                <div class="cita-header">
+                    <span class="servicio-ico">🎨</span>
+                    <strong>Colorista</strong>
+                    <span class="hora">14:00 - 16:00</span>
+                </div>
+                <div class="cita-detalles">
+                    <span>María José Gómez</span>
+                    <span>Empleado: Daniel Tobón</span>
+                </div>
+                <div class="cita-actions">
+                    <button class="btn-editar">Editar</button>
+                    <button class="btn-eliminar">Cancelar</button>
+                </div>
+            </article>
+        </div>
+    </main>
+    
+    <footer>
+        <a href="#ayuda">Ayuda</a> | <a href="#config">Configuración</a> | © 2026 Código Agenda S.A.S
+    </footer>
+
+    <script>
+        function nuevaCita() {
+            alert('Abre modal Nueva Cita (prototipo)');
+        }
+        document.querySelectorAll('.cita').forEach(cita => {
+            cita.addEventListener('keydown', e => {
+                if (e.key === 'Enter') cita.querySelector('button').focus();
+            });
+        });
+    </script>
+</body>
+</html>

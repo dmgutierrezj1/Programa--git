@@ -1,0 +1,190 @@
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+    font: 1.1em 'Segoe UI', -apple-system, sans-serif; 
+    background: linear-gradient(135deg, #F8E1E9 0%, #E8D5E2 100%); 
+    color: #333; 
+    line-height: 1.6; 
+}
+
+/* Header */
+header { 
+    background: #fff; 
+    padding: 1rem 2rem; 
+    box-shadow: 0 2px 10px rgba(214,51,132,0.15); 
+    display: flex; 
+    align-items: center; 
+    gap: 1rem; 
+    position: sticky; top: 0; z-index: 100; 
+}
+header img { height: 45px; }
+header input { 
+    flex: 1; max-width: 400px; 
+    padding: 0.875rem 1rem; 
+    border: 2px solid #D63384; 
+    border-radius: 12px; 
+    font-size: 1rem; 
+    transition: border-color 0.2s; 
+}
+header input:focus { border-color: #cc0063; outline: none; }
+header button { 
+    background: linear-gradient(135deg, #960fc7, #e510ed); 
+    color: #fff; 
+    border: none; 
+    padding: 0.875rem 2rem; 
+    border-radius: 12px; 
+    font-size: 1.05rem; font-weight: 600; 
+    cursor: pointer; 
+    min-height: 52px; 
+    box-shadow: 0 4px 12px rgba(214,51,132,0.3); 
+    transition: all 0.2s; 
+}
+header button:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(214,51,132,0.4); }
+header button:focus { outline: 3px solid #cc0063; outline-offset: 2px; }
+
+/* Nav */
+nav { 
+    background: rgba(255,255,255,0.95); 
+    backdrop-filter: blur(10px); 
+    padding: 0.75rem 2rem; 
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1); 
+}
+nav a { 
+    display: inline-block; 
+    padding: 0.75rem 1.5rem; 
+    color: #666; 
+    text-decoration: none; 
+    margin-right: 0.5rem; 
+    border-radius: 25px; 
+    transition: all 0.2s; 
+    font-weight: 500; 
+}
+nav a.nav-active, nav a:hover, nav a:focus { 
+    background: #cc0063; color: #fff; 
+}
+
+/* Main */
+main { padding: 2rem; max-width: 1400px; margin: 0 auto; }
+h1 { 
+    color: #cc0063; 
+    font-size: 2.2rem; 
+    margin-bottom: 1.5rem; 
+    text-align: center; 
+}
+
+/* Filtros */
+.filtros { 
+    display: flex; 
+    gap: 1rem; 
+    justify-content: center; 
+    margin-bottom: 2rem; 
+    flex-wrap: wrap; 
+}
+.filtros select, .filtros button { 
+    padding: 0.75rem 1.25rem; 
+    border: 2px solid #cc0063; 
+    border-radius: 8px; 
+    background: #fff; 
+    font-size: 1rem; 
+    min-height: 48px; 
+}
+
+/* Grid Citas */
+.cita-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
+    gap: 1.5rem; 
+}
+.cita { 
+    background: #fff; 
+    padding: 2rem; 
+    border-radius: 20px; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+    transition: all 0.3s; 
+    border-top: 6px solid transparent; 
+    cursor: pointer; 
+}
+.cita:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
+.cita:focus { outline: 3px solid #0066CC; outline-offset: 2px; }
+
+/* Colores por servicio */
+.cita.manicure { border-top-color: #FF69B4; }
+.cita.estilista { border-top-color: #FFD700; }
+.cita.colorista { border-top-color: #9370DB; }
+
+.cita-header { 
+    display: flex; 
+    align-items: center; 
+    gap: 1rem; 
+    margin-bottom: 0.75rem; 
+}
+.servicio-ico { font-size: 1.8rem; }
+.hora { 
+    margin-left: auto; 
+    font-weight: 600; 
+    color: #D63384; 
+}
+
+.cita-detalles { 
+    color: #666; 
+    margin-bottom: 1.5rem; 
+    line-height: 1.4; 
+}
+
+.cita-actions { 
+    display: flex; 
+    gap: 0.75rem; 
+}
+.btn-editar { 
+    flex: 1; 
+    background: #a72885; 
+    color: #fff; 
+    border: none; 
+    padding: 0.75rem; 
+    border-radius: 8px; 
+    cursor: pointer; 
+}
+.btn-eliminar { 
+    background: #3e0396; 
+    color: #fff; 
+    border: none;
+    padding: 0.75rem; 
+    border-radius: 8px; 
+    cursor: pointer; 
+}
+.cita-actions button:hover { opacity: 0.9; transform: scale(1.02); }
+.cita-actions button:focus { outline: 2px solid #0066CC; }
+
+/* Footer */
+footer { 
+    text-align: center; 
+    padding: 2rem; 
+    color: #666; 
+    background: #fff; 
+    margin-top: 3rem; 
+}
+footer a { color: #D63384; text-decoration: none; }
+
+/* Responsive */
+@media (max-width: 768px) { 
+    header { padding: 1rem; flex-direction: column; gap: 1rem; text-align: center; }
+    main { padding: 1rem; }
+    .cita-grid { grid-template-columns: 1fr; gap: 1rem; }
+    h1 { font-size: 1.8rem; }
+    .filtros { flex-direction: column; align-items: center; }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) { 
+    * { transition: none !important; transform: none !important; } 
+}
+@media (prefers-contrast: high) { 
+    body { background: #000; color: #fff; } 
+    .cita { border: 2px solid #fff; } 
+}
+
+/* Print */
+@media print { 
+    header, nav, footer { display: none; } 
+    .cita-grid { grid-template-columns: repeat(2, 1fr); } 
+}
